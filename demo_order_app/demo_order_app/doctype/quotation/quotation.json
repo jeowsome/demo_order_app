@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:QOUTE-{####}-{created_from}",
+ "creation": "2023-11-10 06:40:26.602926",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "created_from",
+  "status",
+  "items",
+  "section_break_xlec8",
+  "total_amount",
+  "column_break_6dnb4",
+  "total_qty",
+  "web_customer_info_tab",
+  "customer_name",
+  "contact_no",
+  "email"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "default": "Form",
+   "fieldname": "created_from",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Created From",
+   "options": "Web Page\nForm"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Draft\nFulfilled\nRejected\nFor Review"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.customer",
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Quotation Items",
+   "options": "Quotation Item"
+  },
+  {
+   "depends_on": "eval: doc.created_from !== \"Form\"",
+   "fieldname": "web_customer_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Web Customer Info"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "column_break_6dnb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xlec8",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-13 11:56:24.005187",
+ "modified_by": "Administrator",
+ "module": "Demo Order App",
+ "name": "Quotation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
